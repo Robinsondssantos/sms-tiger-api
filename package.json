@@ -1,0 +1,12 @@
+{
+  "name": "sms-tiger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Robinsondssantos/sms-tiger.git",
+  "author": "Robinson D. S. Santos <robinsondssantos@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1"
+  }
+}
