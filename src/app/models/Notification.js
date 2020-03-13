@@ -6,13 +6,15 @@ class Notification extends Model {
     // https://zenviasms.docs.apiary.io/#introduction/autenticacao
     super.init(
       {
-        from: Sequelize.STRING, // Name of semder
-        to: Sequelize.STRING, // Number - required
+        fromSender: Sequelize.STRING, // Name of semder
+        toRecipient: Sequelize.STRING, // Number - required
         msg: Sequelize.STRING, // required
         schedule: Sequelize.DATE, // 2014-07-18T02:01:23
-        id: Sequelize.STRING, // string
+        msgId: Sequelize.STRING, // string
         callbackOption: Sequelize.STRING, // enum
-        aggregateId: Sequelize.STRING // number
+        aggregateId: Sequelize.STRING, // number
+        flashSms: Sequelize.BOOLEAN
+        // flashSms: false
       },
       {
         sequelize
