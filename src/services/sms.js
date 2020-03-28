@@ -2,10 +2,10 @@ import axios from 'axios'
 
 import zenviaConfig from '../config/zenvia'
 
-function payloadBuilder (to, msg, id) {
+function payloadBuilder (from, to, msg, id) {
   return {
     sendSmsRequest: {
-      // from: "Inobram APP",
+      from,
       to,
       // schedule: new Date(),
       msg,
@@ -34,10 +34,10 @@ class SMS {
     this.headers = headerBuilder(this.apiKey)
   }
 
-  async send(to, msg, id) {
-    await axios.post(
+  async send(from, to, msg, id) {
+    return await axios.post(
       this.url,
-      payloadBuilder(to, msg, id),
+      payloadBuilder(from, to, msg, id),
       this.headers
     )
   }
